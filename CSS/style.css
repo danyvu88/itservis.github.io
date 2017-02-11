@@ -331,12 +331,12 @@ nav ul{
   text-align: center;
 }
 .footer > .footer-sredina > .social-networks > a{
-  color: #547077;
-    padding: 15px;
+  color: #547077 !important;
+    padding: 15px !important;
 }
 .footer > .footer-sredina > .social-networks > a:hover{
-  color: #a6d0bd;
+  color: #a6d0bd !important;
   transition: 0.5s;
-  outline: 1px solid lightgreen;
+  outline: 1px solid lightgreen !important;
 
 }

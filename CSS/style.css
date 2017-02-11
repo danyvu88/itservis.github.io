@@ -310,16 +310,7 @@ nav ul{
  text-align: center;
 
 }
-.footer > .footer-sredina > .social-networks > a{
-  color: #547077;
-    padding: 15px;
-}
-.footer > .footer-sredina > .social-networks > a:hover{
-  color: #a6d0bd;
-  transition: 0.5s;
-  outline: 1px solid lightgreen;
 
-}
 
 @media screen and (max-width: 680px){
     .footer{
@@ -338,4 +329,14 @@ nav ul{
 
 .kontakt-googlemaps{
   text-align: center;
+}
+.footer > .footer-sredina > .social-networks > a{
+  color: #547077;
+    padding: 15px;
+}
+.footer > .footer-sredina > .social-networks > a:hover{
+  color: #a6d0bd;
+  transition: 0.5s;
+  outline: 1px solid lightgreen;
+
 }

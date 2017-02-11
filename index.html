@@ -1,0 +1,274 @@
+
+		<!--PHP VALIDACIJA FORME-->
+		<?php
+			if(isset($_POST['posalji'])){
+
+				$error = $errorname = $errormail = $errormessage = $errorhuman = "";
+
+				$to = "example@email.com";
+				$from = $_POST['email'];
+				$subject = "Poruka vezana u vezi servisa računara";
+				$message = $_POST['message'];
+
+				if(!$_POST['ime']){
+					$errorname = "Molim unesite Vaše ime";
+				}
+
+
+				if(!$_POST['email'] || !filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)){
+					$erroremail ="Molim unesite Vaš email";
+				}
+
+
+				if(!$_POST['poruka']){
+					$errormessage = "Molim unesite Vašu poruku";
+				}
+
+
+				if(!$_POST['human'] || !$_POST['human'] == 5){
+					$errorhuman = "Nažalost odgovor nije tačan";
+				}
+
+
+				if(!$errorname && !$erroremail && !$errormessage && !$errorhuman){
+					mail($to, $subject, $message, $from);
+
+					echo "<p class='text-success'>Uskoro ćete dobiti odgovor na Vaše pitanje</p>";
+				}else{
+					echo "<p class='text-warning'>Nažalost niste dobro uneli korisničke podatke . $error</p>";
+				}
+
+			}
+
+		?>
+
+		<!--END PHP VALIDACIJA FORME-->
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Servis || Kompjutera</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+	<link href="https://fonts.googleapis.com/css?family=Playfair+Display" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Slabo+27px" rel="stylesheet">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="CSS/style.css">
+	<script src="https://code.jquery.com/jquery-3.1.1.js"
+	  integrity="sha256-16cdPddA6VdVInumRGo6IbivbERE8p7CQR3HzTBuELA="
+	  crossorigin="anonymous"></script>
+</head>
+<body data-spy="scroll">
+		<!--menu-->
+		    <nav class="navbar-fixed-top">
+		        <ul>
+		        	<img class="logo1" src="IMG/computer.png" width="45px" height="45px">
+		         <a href="#pocetna"><li>POCETNA</li></a>
+		          <a href="#galerija"><li>GALERIJA</li></a>
+		           <a href="#kontakt"><li>KONTAKT</li></a>
+		            <a href="#lokacija"><li>LOKACIJA</li></a>
+		        </ul>
+		        <div class="hamburger"><img class="logoResponsive" src="IMG/computer.png" width="50px" height="50px"><img class="hamburger2" src="IMG/1.png" width="50px" height="50px"></div>
+		    </nav>
+		<!--end menu-->
+
+		<!--cover slika-->
+		<div id="coverSlika">
+			<br>
+			<br>
+			<h1 id="naslov">SERVIS KOMPJUTERA!<br>JER MI ZNAMO KAKO DA VAM POMOGNEMO!</h1>
+			<br>
+			<button class="kontaktDugme">KONTAKT</button>
+			<button class="kontaktDugme2">LOKACIJA</button>
+		</div>
+		<!--end cover slika-->
+
+		<!--container-->
+		<div class="container">
+			<div class="row">
+				<div class="col-md-4 usluge">
+					<center><h3>NAŠE USLUGE SU JEFTINE</h3></center>
+					<center><img src="IMG/1.jpg" alt="ServisKompjutera" class="img-rounded" width="180px" height="180px"></center>
+					<br>
+					<center><p style="text-align: justify; ">Dolaskom u naš servis, ostvarujete priliku da svaki treći puta imate besplatnu dijagnostiku vašeg kompjutera. Vaše zadovoljsvo je na prvom mestu. Iskustva naših mušterija možete pročitate dole u nastavku.</p></center>
+				</div>
+				<div class="col-md-4 usluge">
+					<center><h3>GARANCIJA NA POPRAVKU</h3></center>
+					<center><img src="IMG/2.jpg" alt="ServisKompjutera" class="img-rounded" width="180px" height="180px"></center>
+					<br>
+					<center><p style="text-align: justify; ">Prilikom obavljanja dijagnostike i popravke Vašeg kompjutera, dobijate i pismenu garanciju na naš rad. Na svaki kompjuter ide i naša nalepnica sa datumom i vremenom kada ste preuzeli kompjuter iz našeg servisa</p></center>
+				</div>
+				<div class="col-md-4 usluge">
+					<center><h3>VEOMA BRZA DIJAGNOSTIKA</h3></center>
+					<center><img src="IMG/3.jpg" alt="ServisKompjutera" class="img-rounded" width="180px" height="180px"></center>
+					<br>
+					<center><p style="text-align: justify; ">Dijagnostiku obavaljaju vrhunski stručnjaci iz područja popravke elektronike i kompjutera. Posedujemo najsavremeniju dijagnostičku opremu za ispitivanje komponenti kompjutera.</p></center>
+				</div>
+			</div>
+		</div>
+
+		<div class="container-fluid iskustva">
+			<div class="row">
+				<div class="col-md-4">
+					<p id="iskustvaKorisnika"><i class="fa fa-angle-double-right" aria-hidden="true"></i>Imam samo reci pohvale za servis kompjutera. Profesionalnost ljudi koji tamo rade je na zavidnom nivou. Brza dijagnostika kvara, i što je najvažnije dobio sam garanciju na popravak. Mlad tim, obrazovan i stručan u svom poslu! Moje preporuke! <i class="fa fa-angle-double-left" aria-hidden="true"></i></p><br>
+					<div class="zvezdice1">
+						<span class="glyphicon glyphicon-star glyphicon zvezda"></span>
+						<span class="glyphicon glyphicon-star glyphicon zvezda"></span>
+						<span class="glyphicon glyphicon-star glyphicon zvezda"></span>
+						<span class="glyphicon glyphicon-star glyphicon zvezda"></span>
+						<span class="glyphicon glyphicon-star glyphicon zvezda"></span>
+					</div>
+	      			<center><a href="#" class="slikaIskustvaHover"><img src="IMG/man1.jpg" alt="..." width="160px" height="130px"></a></center>
+				</div>
+				<div class="col-md-4">
+					<p id="iskustvaKorisnika"><i class="fa fa-angle-double-right" aria-hidden="true"></i>Dugo vremena sam imao problema sa kompjuterom. Prije sam nosio u razne servise na popravak, ali nedugo nakon toga opet bi se pokvario računar. Prijatelj mi je preporučio da probam odneti kompjuter u ITServis, i mogu vam reće da moj kompjuter radi evo 2. godine nakon njihove intevervenice! Sve moje preporuke! <i class="fa fa-angle-double-left" aria-hidden="true"></i></p> 
+					<br>
+					<div class="zvezdice2">
+						<span class="glyphicon glyphicon-star glyphicon zvezda"></span>
+						<span class="glyphicon glyphicon-star glyphicon zvezda"></span>
+						<span class="glyphicon glyphicon-star glyphicon zvezda"></span>
+						<span class="glyphicon glyphicon-star glyphicon zvezda"></span>
+						<span class="glyphicon glyphicon-star glyphicon zvezda"></span>
+					</div>
+	      			<center><a href="#" class="slikaIskustvaHover"><img src="IMG/man2.jpg" alt="..." width="160px" height="130px"></a></center>
+				</div>
+				<div class="col-md-4">
+					<p id="iskustvaKorisnika"><i class="fa fa-angle-double-right" aria-hidden="true"></i>Prilikom rada na računaru, moj monitor se stalno gasio. Stručni tim u ITServisu pomogao mi je da rešim moje muke. Nakon samo 2h zvali su me da dođem pokupiti svoj monitor, jer su ga bili popravili, a cena je bila prava sitinica! Sve moje poreporuke! <i class="fa fa-angle-double-left" aria-hidden="true"></i></p> <br>
+					<div class="zvezdice3">
+						<span class="glyphicon glyphicon-star glyphicon zvezda"></span>
+						<span class="glyphicon glyphicon-star glyphicon zvezda"></span>
+						<span class="glyphicon glyphicon-star glyphicon zvezda"></span>
+						<span class="glyphicon glyphicon-star glyphicon zvezda"></span>
+						<span class="glyphicon glyphicon-star glyphicon zvezda"></span>
+					</div>
+	      			<center><a href="#" class="slikaIskustvaHover"><img src="IMG/woman1.jpg" alt="..." width="160px" height="130px"></a></center>
+				</div>
+				
+			</div>
+		</div>
+		<!--PROCES POPRAVKE RACUNARA-->
+		<center><h3>PROCES POPRAVKE VAŠEG KOMPJUTERA</h3></center>
+		<hr>
+		<br>
+
+		<div class="container">
+			<div class="row">
+				<div class="col-md-6" style='text-align:center'>
+					<img class="slikeProcesPopravka1" src="IMG/popravak1.jpeg" width="400px" height="400px">
+					<!--<i class="fa fa-angle-double-right fa-5x strelicaDesno" aria-hidden="true"></i>-->
+				</div>
+				<div class="col-md-6">
+					<p id="procespopravke1">NAŠ STRUČNI TIM, PREUZIMA VAŠ UREĐAJ. PRILIKOM PREUZIMANJA POTREBNO JE NAPISATI KOJI JE PROBLEM SA UREĐAJEM, ZATIM UNETI SVE U POSEBNU BAZU PODATAKA. </p>
+				</div>
+			</div>
+		</div>
+
+		<br>
+		<hr>
+		<br>
+
+		<div class="container">
+			<div class="row">
+				<div class="col-md-6" style='text-align:center'>
+					<!--<i class="fa fa-angle-double-left fa-5x strelicaLevo" aria-hidden="true"></i>-->
+					<img class="slikeProcesPopravka2" src="IMG/popravak2.jpeg" width="400px" height="400px">
+				</div>
+				<div class="col-md-6">
+					<p id="procespopravke1">ZATIM IDE PROCES DIJAGNOSTIKE KVARA, NAKON ČEGA BUDE KONTAKTIRAN NAŠ KLIJENT, ZBOG DALJNJEG PROCESA POPRAVKA.</p>
+				</div>
+			</div>
+		</div>
+
+		<br>
+		<hr>
+		<br>
+
+		<div class="container">
+			<div class="row">
+				<div class="col-md-6" style='text-align:center'>
+					<img class="slikeProcesPopravka3" src="IMG/popravak2.png" width="400px" height="400px">
+					<!--<i class="fa fa-angle-double-right fa-5x strelicaDesno" aria-hidden="true"></i>-->
+				</div>
+				<div class="col-md-6">
+					<p id="procespopravke1">POPRAVAK ZAVRŠEN. KLIJENT DOLAZI PO SVOJ UREĐAJ. DOBIJA NALEPNICU NA KOJOJ PIŠE DATUM I VREME OBAVLJANJA SERVISA, KAO I PISANU GARANCIJU NA RAD. </p>
+				</div>
+			</div>
+		</div>	
+
+		<br>
+		<hr>
+		<br>
+
+		<!--KONTAKT I LOKACIJA-->
+		<div class="container-fluid kontakt-googlemaps">
+			<div class="row">
+				<div class="col-md-4 col-md-offset-1 forma-sredina">
+					<h3>KONTAKT</h3>		
+					<form method="POST" role="form" id="kontakt" class="kontaktForma forma-sredina">
+						<div class="form-group forma-sredina">
+
+          					<input type="text" class="form-control forma-sredina" placeholder="Unesite Vaše ime..." name="ime" >
+
+          				</div>
+
+          				<div class="form-group forma-sredina">
+          					<input type="text" class="form-control forma-sredina" placeholder="Unesite Vaš email..." name="email">
+          			
+          				</div>
+
+          				<div class="form-group forma-sredina">
+          					<textarea class="form-control forma-sredina" rows="6" placeholder="Unesite Vašu poruku..." name="poruka"></textarea>
+       					 </div>
+
+						<div class="form-group forma-sredina">
+							<label for="human" class="col-sm-3 control-label forma-sredina"><h4>2 + 3 = </h4></label>
+							<div class="col-sm-9">
+								<input type="text" class="form-control forma-sredina" id="human" name="human" placeholder="Vaš odgovor...">
+							</div>
+						</div>
+
+       					 <div class="form-group">
+       				 			<button type="submit" class=" col-md-12 btn btn-default" value="posalji">Pošalji</button>   		 	
+       				 	 </div>
+     				 </form>
+			</div>
+
+				<!--GOOGLE MAPS-->
+				<div class="col-md-7">
+					<div class="map-responsive">
+						<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d89739.75179031838!2d18.929294640710147!3d45.341398508320125!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x475c8f9a2e477a6b%3A0xb6de633cd7e8cfab!2sVukovar!5e0!3m2!1shr!2shr!4v1486820888236" width="500" height="440" frameborder="0" style="border:0" allowfullscreen></iframe>
+					</div>
+				</div>
+				<!--END GOOGLE MAPS-->
+			
+			</div>
+		</div>
+		<!--END KONTAKT I LOKACIJA-->
+
+		<!--FOOTER-->
+		<div class="container-fluid footer">
+			<div class="row footer-sredina">
+				<div class="col-md-6">
+					<p style="text-align: center;">© 2017 Danijel Ruzic • Vukovar, Croatia •</p>
+				</div>	
+					<div class="col-md-6 social-networks">
+							<a href="https://www.facebook.com/danijel.dany.75"><i class="fa fa-facebook fa-2x" aria-hidden="true"></i></a>
+							<a href="https://www.youtube.com/channel/UCoic3KY8QSC9TOoCnnax4Wg"><i class="fa fa-youtube fa-2x" aria-hidden="true"></i></a>
+							<a href="https://hr.linkedin.com/in/danijel-ružić-300047115
+"><i class="fa fa-linkedin fa-2x" aria-hidden="true"></i></a>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!--END FOOTER-->
+
+<script type="text/javascript">
+      $('.hamburger2').on('click', function(){
+        $('nav ul').toggleClass('prikazi');
+    });
+
+</script>
+	
+<script src="http://email.tl.fortawesome.com/c/eJxNjTsOwyAQBU9jSrS7ZsEUFFaU3MPAWrblT2SIcv1QRnqa4hUzOWSxWZxaAwE6aGj0hNoxstNIA-oBnoAPHjsDddfzddfpK-U6RKfrUEuYk4lRvO8jWhOZLCf2THOkAZiTqD0stb5L148dvdo-RZrm_Ne0F0lyQu_A6K2oO-TpXDfZ2foWPqXq5f4ByPozYA">
+</script>
+</body>
+</html>

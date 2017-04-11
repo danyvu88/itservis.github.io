@@ -54,6 +54,7 @@ nav ul{
       color: white;
       width: 100%;
       list-style-type: none;
+      text-align: right;
       margin: 0;
       padding: 0;
       -moz-transition: max-height 0.5s;
@@ -62,7 +63,7 @@ nav ul{
     nav ul li{
       display: inline-block;
       padding: 19px 5px;
-      float: right;
+      /*float: right;*/
       margin-right: 20px;
 
     }

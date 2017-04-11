@@ -156,12 +156,12 @@ nav ul{
 	padding-left: 5%;
 }
 .kontaktDugme{
-	margin-left: 5%;
+	margin-left: 5% !important;
 	width: 200px;
 	height: 50px;
 }
 .kontaktDugme2{
-	margin-left: 5%;
+	margin-left: 5% !important;
 	width: 200px;
 	height: 50px;
 }
